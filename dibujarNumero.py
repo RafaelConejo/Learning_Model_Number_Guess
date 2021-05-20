@@ -109,18 +109,18 @@ class grid(object):
                 x_test[0][row][x] = newMatrix[row][x]
 
         return x_test[:1]
-
+    
 
 def guess(li):
-    model = tf.keras.models.load_model('m.model')
+    model = tf.keras.models.load_model('mi_modelo.model')
 
     predictions = model.predict(li)
     print(predictions[0])
     t = (np.argmax(predictions[0]))
-    print("I predict this number is a:", t)
+    print("Creo que me has presentado un: ", t)
     window = Tk()
     window.withdraw()
-    messagebox.showinfo("Prediction", "I predict this number is a: " + str(t))
+    messagebox.showinfo("Predicion", "Creo que me has presentado un: " + str(t))
     window.destroy()
     #plt.imshow(li[0], cmap=plt.cm.binary)
     #plt.show()
